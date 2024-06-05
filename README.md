@@ -52,7 +52,8 @@ Seven models were put through the ringer and have their hyperparameters tweaked 
 RandomizedSearchCV was used with cross validation fold of 3 and with 3 iterations.
 <p>
 After several iterations, these were the hyperparameters and their values chosen for each model:<br>
-![]( https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Hyperparameters.png )<br>
+![Hyperparameters](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Hyperparameters.png)
+<br>
 
 
 
