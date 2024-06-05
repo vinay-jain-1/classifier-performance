@@ -83,8 +83,8 @@ Test scores remained largely the same for all models except that it increased by
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Test%20score.png)
 
-### Explanability of features and their importance with each model
-#### Logistic Regression - Feature explanability
+## Explanability of features and their importance with each model
+### Logistic Regression - Feature explanability
                         |-------------------------------|-------------|
                         |                      Feature  | Coefficient |
                         |-------------------------------|-------------|
@@ -225,6 +225,5 @@ These are the recommendations to improve the probability of having a customer su
 
 # Questions that I pondered about and intend to do my own research:
 1. I spent quite some time tuning the hyperparameters for each of the models. However, in some cases, I could not reach the same scores as the default model. In some cases, I have even tried to take the default parameter values to try things out but it still did not consistently match. Is it because of RandomizedGridSearch with cv=3? (that is the best explanation I could think of).
-<p>
 2. Is usage of SelectKBest(chi2, k=20) to narrow down the dimensionality appropriate in this case? What is a typical number to apply for k for commercial purposes? Using PCA could be an option too but then I would lose the ability to explain the features hence I did not choose PCA. Are there other such techniques that can be used for reducing dimensionality?
 <p>
