@@ -76,6 +76,12 @@ Training scores remained largely the same for all models except Decision Tree wh
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Train%20score.png)
 
+#### Test score (accuracy)
+Test scores remained largely the same for all models except that it increased by a good 5% for Decision Tree model.
+
+![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models-Test%20score.png)
+
+![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Test%20score.png)
 
 ### Explanability of features and their importance with each model
 #### Logistic Regression - Feature explanability
