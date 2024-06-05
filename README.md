@@ -4,7 +4,7 @@ UC Berkeley - Professional Data Science and Machine Learning - Assignment 17.1
 The goal is to compare the performance of the classifiers (k-nearest neighbors, logistic regression, decision trees, and support vector machines). 
 
 # Link to Jupyter notebook:
- https://github.com/vinay-jain-1/berkeley_car_sales/blob/main/prompt_II.ipynb
+ https://github.com/vinay-jain-1/classifier-performance/blob/main/prompt_III.ipynb
 
 # Business problem
 Compare the performance of the four classifier models (k-nearest neighbors, logistic regression, decision trees, and support vector machines) learned so far. The idea is to use a Banking dataset that has information for over 40K customers who signed up for a term deposit. The dataset contains 21 columns (including target variable 'y') describing the features for bank client characteristics, campaign information and social and economic context attributes. 
