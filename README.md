@@ -61,7 +61,25 @@ This is how the 7 models performed with their hyperparameters tuned:<br>
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models%20with%20hyperparameters%20tuned.png)
 
+### Comparing the default models to the ones that are hypertuned
+#### Training time
+Training times generally became much faster in all models except KNN.<br>
+
+![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models-Train%20time.png)
+
 <p>
+
+![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Train%20time.png)
+
+#### Train score (accuracy)
+Training scores remained largely the same for all models except Decision Tree which is a good sign of not overfitting.
+
+![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models-Train%20score.png)
+
+<p>
+
+![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Train%20score.png)
+
 
 ### Explanability of features and their importance with each model
 #### Logistic Regression - Feature explanability
