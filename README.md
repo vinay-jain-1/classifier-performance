@@ -63,7 +63,7 @@ This is how the 7 models performed with their hyperparameters tuned:<br>
 
 <p>
 
-### Explanability of feature importance with each model
+### Explanability of features and their importance with each model
 #### Logistic Regression - Feature explanability
                         |-------------------------------|-------------|
                         |                      Feature  | Coefficient |
@@ -101,26 +101,28 @@ On the other hand, the quarterly indicator of employment variation rate has a in
 
 ### KNN - Feature explanability
 KNN model also provides weights for each of the features that can then be used for providing specific recommendations to the bank. KNN's feature importance chart looks like this: <br>
+                        |----------------|-----------------------------|
+                        | Weight         | Feature                     |
+                        |----------------|-----------------------------|
+                        | 0.0113±0.0005  | poutcome_success            |
+                        | 0.0091±0.0006  | euribor3m                   |
+                        | 0.0087±0.0009  | education_university.degree |
+                        | 0.0057±0.0004  | marital_single              |
+                        | 0.0054±0.0009  | month_may                   |
+                        | 0.0051±0.0004  | poutcome_nonexistent        |
+                        | 0.0045±0.0008  | month_oct                   |
+                        | 0.0034±0.0005  | job_retired                 |
+                        | 0.0028±0.0004  | previous                    |
+                        | 0.0027±0.0004  | cons.price.idx              |
+                        | 0.0023±0.0006  | month_apr                   |
+                        | 0.0020±0.0002  | job_blue-collar             |
+                        | 0.0018±0.0002  | month_sep                   |
+                        | 0.0016±0.0002  | month_mar                   |
+                        | 0.0012±0.0004  | job_student                 |
+                        | 0.0004±0.0001  | month_dec                   |
+                        | 0.0003±0.0003  | contact_cellular            |
+                        | 0.0002±0.0001  | nr.employed                 |
+                        | 0.0001±0.0005  | contact_telephone           |
+                        | 0.0000±0.0002  | emp.var.rate                |
+                        |----------------|-----------------------------|
 
-| Weight         | Feature                     |
-|----------------|-----------------------------|
-| 0.0113±0.0005  | poutcome_success            |
-| 0.0091±0.0006  | euribor3m                   |
-| 0.0087±0.0009  | education_university.degree |
-| 0.0057±0.0004  | marital_single              |
-| 0.0054±0.0009  | month_may                   |
-| 0.0051±0.0004  | poutcome_nonexistent        |
-| 0.0045±0.0008  | month_oct                   |
-| 0.0034±0.0005  | job_retired                 |
-| 0.0028±0.0004  | previous                    |
-| 0.0027±0.0004  | cons.price.idx              |
-| 0.0023±0.0006  | month_apr                   |
-| 0.0020±0.0002  | job_blue-collar             |
-| 0.0018±0.0002  | month_sep                   |
-| 0.0016±0.0002  | month_mar                   |
-| 0.0012±0.0004  | job_student                 |
-| 0.0004±0.0001  | month_dec                   |
-| 0.0003±0.0003  | contact_cellular            |
-| 0.0002±0.0001  | nr.employed                 |
-| 0.0001±0.0005  | contact_telephone           |
-| 0.0000±0.0002  | emp.var.rate                |
