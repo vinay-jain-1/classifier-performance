@@ -9,7 +9,7 @@ The goal is to compare the performance of the classifiers (k-nearest neighbors, 
 # Business problem
 Compare the performance of the four classifier models (k-nearest neighbors, logistic regression, decision trees, and support vector machines) learned so far. The idea is to use a Banking dataset that has information for over 40K customers who signed up for a term deposit. The dataset contains 21 columns (including target variable 'y') describing the features for bank client characteristics, campaign information and social and economic context attributes. 
 
-Need to compare both base model training time and scores and the same metrics after tuning the hyperparameters across the 4 models.
+Need to compare both base model training time, training and test scores for the default model as the one after tuning the hyperparameters across the 4 types of models.
 
 Besides that also showcase which attributes have what kind of importance so that appropriate recommendations can be provided to the bank for future campaigns.
 
