@@ -1,25 +1,30 @@
 UC Berkeley - Professional Data Science and Machine Learning - Assignment 17.1
 
-# Table of Contents
-- [Goal of this exercise](#goal-of-this-exercise)
-- [Link to Jupyter notebook](#link-to-jupyter-notebook)
+- [Goal of this exercise:](#goal-of-this-exercise)
+- [Link to Jupyter notebook:](#link-to-jupyter-notebook)
 - [Business problem](#business-problem)
 - [Approach](#approach)
-    - [Engineering features](#engineering-features)
-    - [Train/Test split](#traintest-split)
-    - [Baseline](#baseline)
-    - [Simple model](#simple-model)
-    - [Compare the performance of the four classifier models with default settings](#compare-the-performance-of-the-four-classifier-models-with-default-settings)
-    - [Improving the model](#improving-the-model)
-        - [More feature engineering applied to improve the models](#more-feature-engineering-applied-to-improve-the-models)
-        - [Seven models with their hyperparameters and their explainability](#seven-models-with-their-hyperparameters-and-their-explainability)
-        - [Comparing the default models to the ones that are hyperparameter tuned](#comparing-the-default-models-to-the-ones-that-are-hyperparameter-tuned)
-            - [Training time](#training-time)
-            - [Train score (accuracy)](#train-score-accuracy)
-            - [Test score (accuracy)](#test-score-accuracy)
-    - [Explanability of features and their importance with each model](#explanability-of-features-and-their-importance-with-each-model)
-        - [Logistic Regression - Feature explanability](#logistic-regression---feature-explanability)
-        - [KNN - Feature explanability](#knn---feature-explanability)
+  - [Engineering features](#engineering-features)
+  - [Train/Test split](#traintest-split)
+- [Baseline](#baseline)
+- [Simple model](#simple-model)
+- [Compare the performance of the four classifier models with default settings](#compare-the-performance-of-the-four-classifier-models-with-default-settings)
+- [Improving the model](#improving-the-model)
+  - [More feature engineering applied to improve the models](#more-feature-engineering-applied-to-improve-the-models)
+  - [7 models with their hyperparameters and their explainability](#7-models-with-their-hyperparameters-and-their-explainability)
+- [Comparing the default models to the ones that are hyperparameter tuned](#comparing-the-default-models-to-the-ones-that-are-hyperparameter-tuned)
+  - [Training time](#training-time)
+  - [Train score (accuracy)](#train-score-accuracy)
+  - [Test score (accuracy)](#test-score-accuracy)
+- [Explanability of features and their importance with each model](#explanability-of-features-and-their-importance-with-each-model)
+  - [Logistic Regression - Feature explanability](#logistic-regression---feature-explanability)
+  - [KNN - Feature explanability](#knn---feature-explanability)
+  - [Decision Tree - Feature explanability](#decision-tree---feature-explanability)
+  - [SVM (Linear) - Feature explanability](#svm-linear---feature-explanability)
+- [Model Recommendation](#model-recommendation)
+- [Recommendation to the bank](#recommendation-to-the-bank)
+- [Questions that I pondered about and intend to do my own research:](#questions-that-i-pondered-about-and-intend-to-do-my-own-research)
+
 
 # Goal of this exercise:
 The goal is to compare the performance of the classifiers (k-nearest neighbors, logistic regression, decision trees, and support vector machines). 
@@ -43,20 +48,20 @@ Besides that also showcase which attributes have what kind of importance so that
 ## Train/Test split
 Data was split into 80-20 for training and testing. Data was then scaled using StandardScaler. 
 
-## Baseline 
+# Baseline 
 A dumb baseline metric was defined that identified the percentage of most popular value. In this case, it was about 89% for 'no'.
 
-## Simple model
+# Simple model
 LogisticRegression was then used to create a basic model for the data. Its baseline accuracy was recorded at 89.66%. 
 
-## Compare the performance of the four classifier models with default settings
+# Compare the performance of the four classifier models with default settings
 The four models were created, fit and compared for training time (in seconds), training dataset accuracy and test dataset accuracy. Here is how they fared:<br>
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Default%20models.png)<br>
 (Accuracy was identified as the most suitable scoring technique for this dataset).
 
-## Improving the model
+# Improving the model
 
-### More feature engineering applied to improve the models
+## More feature engineering applied to improve the models
 1. Feature 'day_of_week' does not make sense to have a significant outcome on the possibility to doing a term deposit. So dropping it.
 2. For 'poutcome', if the value is 'nonexistent', then change it to 'failure' if 'pdays' is not 999. (999 means no contact was made).
 3. Replace 999 in the 'pdays' column with the mean value of that column so it does not sway the influence on the outcome with its large value.
@@ -68,7 +73,7 @@ The four models were created, fit and compared for training time (in seconds), t
 6. Apply the MinMaxScaler (instead of StandardScaler as some of the columns have a negative values after scaling and that does not fit well with all classifiers).
 7. Since there are 51 columns (after applying one-hot encoding), we need to reduce the dimensionality. So perform feature selection (using SelectKBest with k=20) to reduce dimensionality.
 
-### Seven models with their hyperparameters and their explainability
+## 7 models with their hyperparameters and their explainability
 Seven models were put through the wringer and have their hyperparameters tweaked to get the best training time, training score and test score. <p>
 RandomizedSearchCV was used with cross validation fold of 3 and with 3 iterations.
 <p>
@@ -82,30 +87,30 @@ This is how the 7 models performed with their hyperparameters tuned:<br>
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models%20with%20hyperparameters%20tuned.png)
 
-### Comparing the default models to the ones that are hyperparameter tuned
-#### Training time
+# Comparing the default models to the ones that are hyperparameter tuned
+## Training time
 Training times generally became much faster in all models except for the KNN model.<br>
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models-Train%20time.png)
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Train%20time.png)
 
-#### Train score (accuracy)
+## Train score (accuracy)
 Training scores remained largely the same for all models except Decision Tree which is a good sign of not overfitting.
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models-Train%20score.png)
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Train%20score.png)
 
-#### Test score (accuracy)
+## Test score (accuracy)
 Test scores remained largely the same for all models except that it increased by a good 5% for Decision Tree model.
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models-Test%20score.png)
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Test%20score.png)
 
-## Explanability of features and their importance with each model
-### Logistic Regression - Feature explanability
+# Explanability of features and their importance with each model
+## Logistic Regression - Feature explanability
                         |-------------------------------|-------------|
                         |                      Feature  | Coefficient |
                         |-------------------------------|-------------|
@@ -140,7 +145,7 @@ For example, reaching out to customers where the previous campaign outcome was s
 <br>
 On the other hand, the quarterly indicator of employment variation rate has a inversely proportion impact such that the larger the value of emp.var.rate, the lower the changes of landing the term deposit.
 
-### KNN - Feature explanability
+## KNN - Feature explanability
 KNN model also provides weights for each of the features that can then be used for providing specific recommendations to the bank. KNN's feature importance chart looks like this: <br>
 
                         |----------------|-----------------------------|
@@ -168,9 +173,10 @@ KNN model also provides weights for each of the features that can then be used f
                         | 0.0000±0.0002  | emp.var.rate                |
                         |----------------|-----------------------------|
 
-### Decision Tree - Feature explanability
+
+## Decision Tree - Feature explanability
 Decision Tree model also provides a simplistic view of the features and their importance. Considering that this model gave the highest training and test scores, I would treat this feature importance matrix with highest confidence.
-<p>
+<br>
 
                         |-----------------------------|------------|
                         | Feature                     | Importance |
@@ -197,7 +203,8 @@ Decision Tree model also provides a simplistic view of the features and their im
                         | month_sep                   | 0.000000   |
                         |-----------------------------|------------|
 
-### SVM (Linear) - Feature explanability
+
+## SVM (Linear) - Feature explanability
 SVM (with a kernel of Linear) is the only model in the SVM family that provides feature explanability. Here is its feature explanability:<p>
 
                         |------------------|-----------------------------|    
@@ -224,6 +231,7 @@ SVM (with a kernel of Linear) is the only model in the SVM family that provides 
                         | -0.0001 ± 0.0000 | job_student                 |
                         | -0.0002 ± 0.0001 | month_apr                   |
                         |------------------|-----------------------------|
+
 
 # Model Recommendation
 Considering that the Decision Tree model tuned with hyperparameters provided a very high training and test acurracy score, coupled with the fact that it has an easy to explain list of features, the improved Decision Tree model would be the choice for this dataset.
