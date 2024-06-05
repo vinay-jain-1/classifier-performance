@@ -101,6 +101,7 @@ On the other hand, the quarterly indicator of employment variation rate has a in
 
 ### KNN - Feature explanability
 KNN model also provides weights for each of the features that can then be used for providing specific recommendations to the bank. KNN's feature importance chart looks like this: <br>
+
                         |----------------|-----------------------------|
                         | Weight         | Feature                     |
                         |----------------|-----------------------------|
@@ -125,4 +126,6 @@ KNN model also provides weights for each of the features that can then be used f
                         | 0.0001±0.0005  | contact_telephone           |
                         | 0.0000±0.0002  | emp.var.rate                |
                         |----------------|-----------------------------|
+<p>
+
 
