@@ -30,6 +30,6 @@ LogisticRegression was then used to create a basic model for the data. Its basel
 
 ## Compare the performance of the four classifier models with default settings
 The four models were created, fit and compared for training time, training dataset accuracy and test dataset accuracy. Here is how they fared:
-!https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Default%20models.png
+!(https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Default%20models.png)
 
 
