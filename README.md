@@ -1,5 +1,26 @@
 UC Berkeley - Professional Data Science and Machine Learning - Assignment 17.1
 
+# Table of Contents
+- [Goal of this exercise](#goal-of-this-exercise)
+- [Link to Jupyter notebook](#link-to-jupyter-notebook)
+- [Business problem](#business-problem)
+- [Approach](#approach)
+    - [Engineering features](#engineering-features)
+    - [Train/Test split](#traintest-split)
+    - [Baseline](#baseline)
+    - [Simple model](#simple-model)
+    - [Compare the performance of the four classifier models with default settings](#compare-the-performance-of-the-four-classifier-models-with-default-settings)
+    - [Improving the model](#improving-the-model)
+        - [More feature engineering applied to improve the models](#more-feature-engineering-applied-to-improve-the-models)
+        - [Seven models with their hyperparameters and their explainability](#seven-models-with-their-hyperparameters-and-their-explainability)
+        - [Comparing the default models to the ones that are hyperparameter tuned](#comparing-the-default-models-to-the-ones-that-are-hyperparameter-tuned)
+            - [Training time](#training-time)
+            - [Train score (accuracy)](#train-score-accuracy)
+            - [Test score (accuracy)](#test-score-accuracy)
+    - [Explanability of features and their importance with each model](#explanability-of-features-and-their-importance-with-each-model)
+        - [Logistic Regression - Feature explanability](#logistic-regression---feature-explanability)
+        - [KNN - Feature explanability](#knn---feature-explanability)
+
 # Goal of this exercise:
 The goal is to compare the performance of the classifiers (k-nearest neighbors, logistic regression, decision trees, and support vector machines). 
 
