@@ -23,7 +23,7 @@ Besides that also showcase which attributes have what kind of importance so that
 Data was split into 80-20 for training and testing. Data was then scaled using StandardScaler. 
 
 ## Baseline 
-A dubm baseline metric was defined that identified the percentage of most popular value. In this case, it was about 89% for 'no'.
+A dumb baseline metric was defined that identified the percentage of most popular value. In this case, it was about 89% for 'no'.
 
 ## Simple model
 LogisticRegression was then used to create a basic model for the data. Its baseline accuracy was recorded at 89.66%. 
