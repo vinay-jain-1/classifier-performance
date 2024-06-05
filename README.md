@@ -39,10 +39,10 @@ The four models were created, fit and compared for training time (in seconds), t
 1. Feature 'day_of_week' does not make sense to have a significant outcome on the possibility to doing a term deposit. So dropping it.
 2. For 'poutcome', if the value is 'nonexistent', then change it to 'failure' if 'pdays' is not 999. (999 means no contact was made).
 3. Replace 999 in the 'pdays' column with the mean value of that column so it does not sway the influence on the outcome with its large value.
-4. Do the remaining feature engineering like it was done before:
-    a. handle 'unknown' values
-    b. apply one-hot encoder on categorical features
-    c. Encode the 'y' value using a Label Encoder.
+4. Do the remaining feature engineering like it was done before: <br>
+    a. handle 'unknown' values <br>
+    b. apply one-hot encoder on categorical features <br>
+    c. Encode the 'y' value using a Label Encoder. <br>
 5. Perform the train/test split.
 6. Apply the MinMaxScaler (instead of StandardScaler as some of the columns have a negative values after scaling and that does not fit well with all classifiers).
 7. Since there are 51 columns (after applying one-hot encoding), we need to reduce the dimensionality. So perform feature selection (using SelectKBest with k=20) to reduce dimensionality.
