@@ -29,7 +29,7 @@ A dumb baseline metric was defined that identified the percentage of most popula
 LogisticRegression was then used to create a basic model for the data. Its baseline accuracy was recorded at 89.66%. 
 
 ## Compare the performance of the four classifier models with default settings
-The four models were created, fit and compared for training time, training dataset accuracy and test dataset accuracy. Here is how they fared:<br>
+The four models were created, fit and compared for training time (in seconds), training dataset accuracy and test dataset accuracy. Here is how they fared:<br>
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Default%20models.png)<br>
 (Accuracy was identified as the most suitable scoring technique for this dataset).
 
