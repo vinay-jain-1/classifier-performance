@@ -33,3 +33,27 @@ The four models were created, fit and compared for training time, training datas
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Default%20models.png)<br>
 (Accuracy was identified as the most suitable scoring technique for this dataset).
 
+## Improving the model
+
+### More feature engineering applied to improve the models
+1. Feature 'day_of_week' does not make sense to have a significant outcome on the possibility to doing a term deposit. So dropping it.
+2. For 'poutcome', if the value is 'nonexistent', then change it to 'failure' if 'pdays' is not 999. (999 means no contact was made).
+3. Replace 999 in the 'poutcome' column with the mean value of that column so it does not sway the influence on the outcome with its large value.
+4. Do the remaining feature engineering like it was done before:
+    a. handle 'unknown' values
+    b. apply one-hot encoder on categorical features
+    c. Encode the 'y' value using a Label Encoder.
+5. Perform the train/test split.
+6. Apply the MinMaxScaler (instead of StandardScaler as some of the columns have a negative values after scaling and that does not fit well with all classifiers).
+7. Since there are 51 columns (after applying one-hot encoding), we need to reduce the dimensionality. So perform feature selection (using SelectKBest with k=20) to reduce dimensionality.
+
+### Faring through various models with their hyperparameters and their explainability
+Seven models were put through the ringer and have their hyperparameters tweaked to get the best training time, training score and test score. <p>
+RandomizedSearchCV was used with cross validation fold of 3 and with 3 iterations.
+<p>
+After several iterations, these were the hyperparameters and their values chosen for each model: <b>
+![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Hyperparameters.png)
+
+
+
+For 
