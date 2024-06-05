@@ -38,7 +38,7 @@ The four models were created, fit and compared for training time (in seconds), t
 ### More feature engineering applied to improve the models
 1. Feature 'day_of_week' does not make sense to have a significant outcome on the possibility to doing a term deposit. So dropping it.
 2. For 'poutcome', if the value is 'nonexistent', then change it to 'failure' if 'pdays' is not 999. (999 means no contact was made).
-3. Replace 999 in the 'poutcome' column with the mean value of that column so it does not sway the influence on the outcome with its large value.
+3. Replace 999 in the 'pdays' column with the mean value of that column so it does not sway the influence on the outcome with its large value.
 4. Do the remaining feature engineering like it was done before:
     a. handle 'unknown' values
     b. apply one-hot encoder on categorical features
