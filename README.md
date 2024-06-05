@@ -63,11 +63,9 @@ This is how the 7 models performed with their hyperparameters tuned:<br>
 
 ### Comparing the default models to the ones that are hypertuned
 #### Training time
-Training times generally became much faster in all models except KNN.<br>
+Training times generally became much faster in all models except for the KNN model.<br>
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models-Train%20time.png)
-
-<p>
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Train%20time.png)
 
@@ -75,8 +73,6 @@ Training times generally became much faster in all models except KNN.<br>
 Training scores remained largely the same for all models except Decision Tree which is a good sign of not overfitting.
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models-Train%20score.png)
-
-<p>
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/SVM%20Models-Train%20score.png)
 
