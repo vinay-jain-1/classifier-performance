@@ -48,7 +48,7 @@ The four models were created, fit and compared for training time (in seconds), t
 7. Since there are 51 columns (after applying one-hot encoding), we need to reduce the dimensionality. So perform feature selection (using SelectKBest with k=20) to reduce dimensionality.
 
 ### Seven models with their hyperparameters and their explainability
-Seven models were put through the ringer and have their hyperparameters tweaked to get the best training time, training score and test score. <p>
+Seven models were put through the wringer and have their hyperparameters tweaked to get the best training time, training score and test score. <p>
 RandomizedSearchCV was used with cross validation fold of 3 and with 3 iterations.
 <p>
 After several iterations, these were the hyperparameters and their values chosen for each model:<br>
