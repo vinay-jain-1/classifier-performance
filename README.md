@@ -146,6 +146,85 @@ KNN model also provides weights for each of the features that can then be used f
                         | 0.0001±0.0005  | contact_telephone           |
                         | 0.0000±0.0002  | emp.var.rate                |
                         |----------------|-----------------------------|
+
+### Decision Tree - Feature explanability
+Decision Tree model also provides a simplistic view of the features and their importance. Considering that this model gave the highest training and test scores, I would treat this feature importance matrix with highest confidence.
 <p>
 
+                        |-----------------------------|------------|
+                        | Feature                     | Importance |
+                        |-----------------------------|------------|
+                        | nr.employed                 | 0.664706   |
+                        | poutcome_success            | 0.128195   |
+                        | month_apr                   | 0.046748   |
+                        | month_mar                   | 0.044270   |
+                        | euribor3m                   | 0.035452   |
+                        | month_oct                   | 0.026354   |
+                        | contact_cellular            | 0.020129   |
+                        | cons.price.idx              | 0.014823   |
+                        | poutcome_nonexistent        | 0.010510   |
+                        | education_university.degree | 0.007886   |
+                        | marital_single              | 0.000927   |
+                        | month_may                   | 0.000000   |
+                        | month_dec                   | 0.000000   |
+                        | previous                    | 0.000000   |
+                        | contact_telephone           | 0.000000   |
+                        | emp.var.rate                | 0.000000   |
+                        | job_student                 | 0.000000   |
+                        | job_retired                 | 0.000000   |
+                        | job_blue-collar             | 0.000000   |
+                        | month_sep                   | 0.000000   |
+                        |-----------------------------|------------|
 
+### SVM (Linear) - Feature explanability
+SVM (with a kernel of Linear) is the only model in the SVM family that provides feature explanability. Here is its feature explanability:<p>
+
+        |------------------|-----------------------------|    
+        |          Weight  | Feature                     |
+        |------------------|-----------------------------|
+        | 0.0265 ± 0.0006  | nr.employed                 |
+        | 0.0171 ± 0.0002  | euribor3m                   |
+        | 0.0130 ± 0.0005  | poutcome_success            |
+        | 0.0044 ± 0.0008  | emp.var.rate                |
+        | 0.0011 ± 0.0003  | poutcome_nonexistent        |
+        | 0.0006 ± 0.0004  | contact_telephone           |
+        | 0.0005 ± 0.0003  | month_mar                   |
+        | 0.0004 ± 0.0005  | cons.price.idx              |
+        | 0.0001 ± 0.0005  | month_may                   |
+        | 0.0001 ± 0.0002  | marital_single              |
+        | 0.0001 ± 0.0001  | contact_cellular            |
+        | 0.0001 ± 0.0002  | education_university.degree |
+        | 0.0000 ± 0.0001  | month_dec                   |
+        | 0.0000 ± 0.0000  | month_oct                   |
+        | 0.0000 ± 0.0001  | job_retired                 |
+        | 0.0000 ± 0.0001  | job_blue-collar             |
+        | -0.0000 ± 0.0001 | month_sep                   |
+        | -0.0000 ± 0.0002 | previous                    |
+        | -0.0001 ± 0.0000 | job_student                 |
+        | -0.0002 ± 0.0001 | month_apr                   |
+        |------------------|-----------------------------|
+
+# Model Recommendation
+Considering that the Decision Tree model tuned with hyperparameters provided a very high training and test acurracy score, coupled with the fact that it has an easy to explain list of features, the improved Decision Tree model would be the choice for this dataset.
+<p>
+It is also a good idea to use the Logistic Regression's coefficient sign to explain the positive or negative effect of the features on the outcome.
+
+# Recommendation to the bank
+These are the recommendations to improve the probability of having a customer subscribe to the term deposit at bank (listed in the order of decreasing importance-- first is the most important):
+1. The highest swing factor is the number of employees - quarterly indicator. The higher the number, the more negatively it affects the probability of getting customers to subscribe to term deposits.
+2. Having a successful previous outcome is a good boost to improving the probability.
+3. Making the last contact in April has not turned out to be favorable.
+4. However, the last contact in March turned out to be favorable.
+5. The euribor3m interest rate is a good leading indicator of positively increasing the probability of term deposits. The higher the interest rate, the greater the chances.
+6. Having the last contact in October showed improved probability.
+7. Making contact over cellular phone has also showed improved probability.
+8. cons.price.idx has showed to be a positive factor.
+9. Customers who have not been contacted in the previous marketing campaign are the next positive factor.
+10. Customers with an education of university degree are inclined to subsribe to term deposits.
+11. Customers that have a marital status of single are the last one in the list.
+
+# Questions that I pondered about and intend to do my own research:
+1. I spent quite some time tuning the hyperparameters for each of the models. However, in some cases, I could not reach the same scores as the default model. In some cases, I have even tried to take the default parameter values to try things out but it still did not consistently match. Is it because of RandomizedGridSearch with cv=3? (that is the best explanation I could think of).
+<p>
+2. Is usage of SelectKBest(chi2, k=20) to narrow down the dimensionality appropriate in this case? What is a typical number to apply for k for commercial purposes? Using PCA could be an option too but then I would lose the ability to explain the features hence I did not choose PCA. Are there other such techniques that can be used for reducing dimensionality?
+<p>
