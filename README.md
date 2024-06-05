@@ -47,13 +47,16 @@ The four models were created, fit and compared for training time, training datas
 6. Apply the MinMaxScaler (instead of StandardScaler as some of the columns have a negative values after scaling and that does not fit well with all classifiers).
 7. Since there are 51 columns (after applying one-hot encoding), we need to reduce the dimensionality. So perform feature selection (using SelectKBest with k=20) to reduce dimensionality.
 
-### Faring through various models with their hyperparameters and their explainability
+### Seven models with their hyperparameters and their explainability
 Seven models were put through the ringer and have their hyperparameters tweaked to get the best training time, training score and test score. <p>
 RandomizedSearchCV was used with cross validation fold of 3 and with 3 iterations.
 <p>
 After several iterations, these were the hyperparameters and their values chosen for each model:<br>
-![Hyperparameters](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Hyperparameters.png)
+![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Hyperparameters.png)
 <br>
+
+This is how the 7 models performed with their hyperparameters tuned:
+
 
 
 
