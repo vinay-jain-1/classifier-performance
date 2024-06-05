@@ -51,9 +51,8 @@ The four models were created, fit and compared for training time, training datas
 Seven models were put through the ringer and have their hyperparameters tweaked to get the best training time, training score and test score. <p>
 RandomizedSearchCV was used with cross validation fold of 3 and with 3 iterations.
 <p>
-After several iterations, these were the hyperparameters and their values chosen for each model: <b>
+After several iterations, these were the hyperparameters and their values chosen for each model:<br>
 ![]( https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Hyperparameters.png )<br>
 
 
 
-For 
