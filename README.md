@@ -179,30 +179,30 @@ Decision Tree model also provides a simplistic view of the features and their im
 ### SVM (Linear) - Feature explanability
 SVM (with a kernel of Linear) is the only model in the SVM family that provides feature explanability. Here is its feature explanability:<p>
 
-        |------------------|-----------------------------|    
-        |          Weight  | Feature                     |
-        |------------------|-----------------------------|
-        | 0.0265 ± 0.0006  | nr.employed                 |
-        | 0.0171 ± 0.0002  | euribor3m                   |
-        | 0.0130 ± 0.0005  | poutcome_success            |
-        | 0.0044 ± 0.0008  | emp.var.rate                |
-        | 0.0011 ± 0.0003  | poutcome_nonexistent        |
-        | 0.0006 ± 0.0004  | contact_telephone           |
-        | 0.0005 ± 0.0003  | month_mar                   |
-        | 0.0004 ± 0.0005  | cons.price.idx              |
-        | 0.0001 ± 0.0005  | month_may                   |
-        | 0.0001 ± 0.0002  | marital_single              |
-        | 0.0001 ± 0.0001  | contact_cellular            |
-        | 0.0001 ± 0.0002  | education_university.degree |
-        | 0.0000 ± 0.0001  | month_dec                   |
-        | 0.0000 ± 0.0000  | month_oct                   |
-        | 0.0000 ± 0.0001  | job_retired                 |
-        | 0.0000 ± 0.0001  | job_blue-collar             |
-        | -0.0000 ± 0.0001 | month_sep                   |
-        | -0.0000 ± 0.0002 | previous                    |
-        | -0.0001 ± 0.0000 | job_student                 |
-        | -0.0002 ± 0.0001 | month_apr                   |
-        |------------------|-----------------------------|
+                        |------------------|-----------------------------|    
+                        |          Weight  | Feature                     |
+                        |------------------|-----------------------------|
+                        | 0.0265 ± 0.0006  | nr.employed                 |
+                        | 0.0171 ± 0.0002  | euribor3m                   |
+                        | 0.0130 ± 0.0005  | poutcome_success            |
+                        | 0.0044 ± 0.0008  | emp.var.rate                |
+                        | 0.0011 ± 0.0003  | poutcome_nonexistent        |
+                        | 0.0006 ± 0.0004  | contact_telephone           |
+                        | 0.0005 ± 0.0003  | month_mar                   |
+                        | 0.0004 ± 0.0005  | cons.price.idx              |
+                        | 0.0001 ± 0.0005  | month_may                   |
+                        | 0.0001 ± 0.0002  | marital_single              |
+                        | 0.0001 ± 0.0001  | contact_cellular            |
+                        | 0.0001 ± 0.0002  | education_university.degree |
+                        | 0.0000 ± 0.0001  | month_dec                   |
+                        | 0.0000 ± 0.0000  | month_oct                   |
+                        | 0.0000 ± 0.0001  | job_retired                 |
+                        | 0.0000 ± 0.0001  | job_blue-collar             |
+                        | -0.0000 ± 0.0001 | month_sep                   |
+                        | -0.0000 ± 0.0002 | previous                    |
+                        | -0.0001 ± 0.0000 | job_student                 |
+                        | -0.0002 ± 0.0001 | month_apr                   |
+                        |------------------|-----------------------------|
 
 # Model Recommendation
 Considering that the Decision Tree model tuned with hyperparameters provided a very high training and test acurracy score, coupled with the fact that it has an easy to explain list of features, the improved Decision Tree model would be the choice for this dataset.
