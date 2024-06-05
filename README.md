@@ -61,7 +61,7 @@ This is how the 7 models performed with their hyperparameters tuned:<br>
 
 ![](https://github.com/vinay-jain-1/classifier-performance/blob/main/images/Models%20with%20hyperparameters%20tuned.png)
 
-### Comparing the default models to the ones that are hypertuned
+### Comparing the default models to the ones that are hyperparameter tuned
 #### Training time
 Training times generally became much faster in all models except for the KNN model.<br>
 
